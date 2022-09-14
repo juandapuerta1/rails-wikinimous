@@ -1,2 +1,11 @@
-<h1>Article#show</h1>
-<p>Find me in app/views/article/show.html.erb</p>
+<h1>My details article</h1>
+
+<h2><%= @article.title %></h2>
+<p><%= @article.content %></p>
+
+<%= link_to "Back", articles_path %>
+<%= link_to "Edit", edit_article_path(@article.id) %>
+
+<%= link_to article_path, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+  <i class="fa-solid fa-trash"></i>
+<% end %>
